@@ -1,1 +1,39 @@
-op
+#%RAML 1.0
+types:
+  Customer:
+    properties:
+      Id:
+        example: Example
+        type: string
+      Name:
+        example: Audrey
+        type: string
+      Email:
+        example: myEmail@gmail.com
+        type: string
+      Phone:
+        example: Example
+        type: string
+      Account:
+        example: Example
+        type: string
+title: GetCustomer
+mediaType:
+  - application/json
+protocols:
+  - HTTP
+/getCustomers:
+  get:
+    responses:
+      "200":
+        body:
+          items:
+            type: Customer
+/getCustomerByID/{id}:
+  get:
+    body: {}
+    responses:
+      "200":
+        body:
+          type: Customer
+    securedBy: []
