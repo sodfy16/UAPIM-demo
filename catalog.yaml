@@ -1,0 +1,6 @@
+#%Catalog Descriptor 1.0
+projects:
+  - main: NodeJsAPI/Customer/Customer.raml
+    assetId: getcustomer
+    version: 1.0.0
+    apiVersion: v1

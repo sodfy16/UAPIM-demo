@@ -1,0 +1,113 @@
+#%RAML 1.0
+title: Customers API
+version: 2.0
+description: Customers API is a RESTful process API that allows you to create, update and retrieve customers.
+
+types:
+  Customer: !include datatypes/customer.raml
+
+traits:
+  client-id-required: !include exchange_modules/a4657ee6-a668-41e6-8336-8abd37b044b4/client-id-required/1.0.0/client-id-required.raml
+
+/customers:
+  get:
+    description: Retrieves customers based on the given query parameters.
+    displayName: Get customers
+    responses:
+      200:
+        description: Returns an array of Customer objects in JSON
+        headers:
+          Content-Type:
+            type: string
+            example: "application/json"
+        body:
+          application/json:
+            type: Customer[]
+            examples:  !include examples/customersExample.raml
+  
+  post:
+    description: Creates new customers based on a given array of Customer objects.
+    displayName: Create customers
+    body:
+      application/json:
+        description: Payload should be an array of Customer objects with all fields present for each Customer object.
+        type: Customer[]
+        examples:  !include examples/customersExample.raml
+    responses:
+      201:
+        headers:
+          Content-Type:
+            type: string
+            example: "application/json"
+        body:
+          application/json:
+            example: {
+              "message": "Customers uploaded (but not really)."
+            }
+  /{id}:
+    get:
+      description: Retrieves information for a customer
+      displayName: Get customer by id
+      responses:
+        200:
+          headers:
+            Content-Type:
+              type: string
+              example: "application/json"
+          body:
+            application/json:
+              type: Customer
+              examples: !include examples/customerExample.raml
+    put:
+      description: Endpoint to replace all values of the associated customer.
+      displayName: Replace customer by id
+      body: 
+        application/json:
+          description: The given expected object should contain all fields for Customer.
+          type: Customer
+          examples: !include examples/customerExample.raml
+      responses:
+        200:
+          headers:
+            Content-Type:
+              type: string
+              example: "application/json"
+          body:
+            application/json:
+              examples: {
+                "message": "Customer replaced (but not really)"
+              }
+    patch:
+      description: Endpoint to modify the associated customer.
+      displayName: Modify customer by id
+      body: 
+        application/json:
+          description: The given expected object can contain one field or all fields for Customer that need to be modified.
+          type: Customer
+          examples: !include examples/customerExample.raml
+      responses: 
+        200:
+          headers:
+            Content-Type:
+              type: string
+              example: "application/json"
+          body: 
+            application/json:
+              example: {
+                "message": "Customer modified (but not really)"
+              }
+
+    delete:
+      description: Endpoint to delete the associated customer.
+      displayName: Delete customer by id
+      responses:
+        200:
+          headers:
+            Content-Type:
+              type: string
+              example: "application/json"
+          body:
+            application/json:
+              example: {
+                "message": "Customer deleted (but not really)"
+              }
