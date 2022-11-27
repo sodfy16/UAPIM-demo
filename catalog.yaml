@@ -1,0 +1,14 @@
+#%Catalog Descriptor 1.0
+projects:
+  - main: NodeJsAPI/Customer/Customer.raml
+    assetId: getcustomer
+    version: 1.0.0
+    apiVersion: v1
+  - main: NodeJsAPI/Opportunity/opportunity-api-oas.yaml
+    assetId: opportunities-api
+    version: 1.0.0
+    apiVersion: v1
+  - main: VictorAPI/Customers API/customers-api.raml
+    assetId: customers-api
+    version: 2.0.0
+    apiVersion: v2
