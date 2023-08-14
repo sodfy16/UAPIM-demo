@@ -4,7 +4,7 @@
     "title": "Opportunities API",
     "version": "5.0.0"
   },
-  "paths": {s
+  "paths": {
     "/opportunities": {
       "post": {
         "requestBody": {
