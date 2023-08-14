@@ -2,9 +2,9 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Opportunities API",
-    "version": "4.0.0"
+    "version": "5.0.0"
   },
-  "paths": {
+  "paths": {s
     "/opportunities": {
       "post": {
         "requestBody": {
