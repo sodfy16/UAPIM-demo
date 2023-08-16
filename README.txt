@@ -1,8 +1,9 @@
 UAPIM-demo
 
-Ce repository contient 2 APIs NodeJS
-	Avec des types de specifications différentes
-	Et de la documentation au format Markdown
+This repository contains 2 APIs built on NodeJS
+
+	With different format (OAS, RAML)
+	And with Markdown documentation
 
 NodeJsAPI :
 	- getCustomer : RAML
