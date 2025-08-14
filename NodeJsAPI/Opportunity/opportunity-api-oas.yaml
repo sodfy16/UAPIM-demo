@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Opportunities API",
-    "version": "17.0.0"
+    "version": "16.0.0"
   },
   "paths": {
     "/opportunities": {
